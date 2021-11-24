@@ -2,8 +2,10 @@
   <div class="fade-in">
     <div class="text-center mb-4">
       <nuxt-link to="/" class="text-black">
-        <img src="/images/mthq.png" width="80" />
-        <div class="row justify-content-center">
+         <div class="row flex justify-center">
+        <img class="" src="/images/mthq.png" width="80" />
+        </div>
+        <div class="row flex justify-center ...">
           <h3 data-text="MTHQ" id="front-text" class="mt-2 font-weight-bold">MTHQ&nbsp;</h3>
           <h3 data-text="GATEWAY" id="front-text" class="mt-2 font-weight-bold" style="color:black">GATEWAY</h3>
         </div>

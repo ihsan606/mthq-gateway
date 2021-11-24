@@ -127,8 +127,8 @@ export default {
           tdClass: "text-left",
         },
         {
-          label: "Email",
-          key: "email",
+          label: "No Hp",
+          key: "mobile_number",
           tdClass: "text-left",
         },
         {
