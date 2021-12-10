@@ -27,7 +27,6 @@
 
                 </form>
                 
-              </div>
               <b-table
                     striped
                     bordered
@@ -35,6 +34,7 @@
                     :items="kelas.santris"
                     :fields="fields"
                     show-empty
+                    class="mt-3"
                   >
                     <template v-slot:cell(image)="data">
                       <img
@@ -62,6 +62,7 @@
                       >
                     </template>
                   </b-table>
+              </div>
             </div>
           </div>
         </div>

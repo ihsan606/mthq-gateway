@@ -25,7 +25,7 @@
     </button>
     <div class="d-flex align-items-stretch flex-shrink-0">
       <div class="d-flex align-items-stretch ms-1 ms-lg-3 mt-3 d-lg-none">
-      <nuxt-link :to="{name:'wali-dashboard'}">
+      <nuxt-link :to="{name:'pendaftaran-dashboard-id',params:{id: this.$auth.user.id}}">
         <i class="fa fa-home" style="font-size:20px"></i>
       </nuxt-link>
       </div>

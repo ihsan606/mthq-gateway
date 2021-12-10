@@ -73,9 +73,11 @@
 
         //sending data to action "storeKelas" vuex
         await this.$store.dispatch('admin/kelas/storeKelas', formData)
+        
           
           //success
           .then(() => {
+       
 
             //sweet alert
             this.$swal.fire({

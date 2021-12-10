@@ -63,7 +63,10 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/style.min.css", 
-        "@/assets/css/custom.css"],
+        "@/assets/css/custom.css",
+        // 'bootstrap-css-only/css/bootstrap.min.css',
+        // 'mdbvue/lib/css/mdb.min.css'
+      ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -156,6 +159,35 @@ export default {
           },
         },
   
+        santribaru: {
+          scheme: 'local',
+          token: {
+            property: 'token',
+            required: true,
+            type: 'Bearer'
+          },
+          user: {
+            property: 'user',
+            // autoFetch: true
+          },
+          endpoints: {
+            login: {
+              url: '/api/pendaftaran/login',
+              method: 'post',
+              propertyName: 'token'
+            },
+            logout: {
+              url: '/api/pendaftaran/logout',
+              method: 'post'
+            },
+            user: {
+              url: '/api/pendaftaran/user',
+              method: 'get',
+              propertyName: 'user'
+            }
+          },
+        },
+  
     },
   },
 
@@ -166,5 +198,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+   
   }
 }

@@ -34,6 +34,41 @@
 
                 </form>
                 
+                <b-table
+                    striped
+                    bordered
+                    hover
+                    :items="angkatan.santris"
+                    :fields="fields"
+                    show-empty
+                    class="mt-3"
+                  >
+                    <template v-slot:cell(image)="data">
+                      <img
+                        class="img-fluid"
+                        width="200"
+                        :src="data.item.image"
+                      />
+                    </template>
+                    <template v-slot:cell(actions)="row">
+                      <b-button
+                        :to="{
+                          name: 'admin-santris-edit-id',
+                          params: { id: row.item.id },
+                        }"
+                        variant="info"
+                        size="sm"
+                      >
+                        EDIT
+                      </b-button>
+                      <b-button
+                        variant="danger"
+                        size="sm"
+                        @click="destroySantri(row.item.id)"
+                        >DELETE</b-button
+                      >
+                    </template>
+                  </b-table>
               </div>
             </div>
           </div>
@@ -61,8 +96,37 @@
         //state category
         angkatan: {
           name: '',
-          alias: ''
+          alias: '',
+          santris:[]
         },
+
+        fields: [
+        {
+          label: "Santri",
+          key: "name",
+          tdClass: "text-left",
+        },
+        {
+          label: "NISM",
+          key: "nism",
+          tdClass: "text-left",
+        },
+        {
+          label: "Angkatan",
+          key: "angkatan.name",
+          tdClass: "text-left",
+        },
+        {
+          label: "Kelas",
+          key: "kelas.name",
+          tdClass: "text-left",
+        },
+        {
+          label: "Actions",
+          key: "actions",
+          tdClass: "text-center",
+        },
+      ],
         //state validation
         validation: []
       }
@@ -77,7 +141,8 @@
     //mounted
     mounted() {
         this.angkatan.name = this.$store.state.admin.angkatan.angkatan.name,
-        this.angkatan.alias = this.$store.state.admin.angkatan.angkatan.alias
+        this.angkatan.alias = this.$store.state.admin.angkatan.angkatan.alias,
+        this.angkatan.santris = this.$store.state.admin.angkatan.angkatan.santris
     },
 
     //method

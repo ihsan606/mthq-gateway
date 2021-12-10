@@ -3,18 +3,18 @@
     <div class="container-xl">
       <div class="header">
         <div class="col-md-12">
-          <h1 class="rounded">FORMULIR PENDAFTARAN SANTRI BARU</h1>
+          <h1 class="rounded">FORMULIR DAFTAR ULANG SANTRI BARU</h1>
           <p class="mb-5">Ma'had Tahfidz Hidayatul Quran</p>
           
         </div>
       </div>
-      <div class="bform">
-        <form @submit.prevent="storeSantri">
+      <div class="card rounded shadow-sm border-top-blue ">
+        <form @submit.prevent="updateSantri" class="my-3 mx-3">
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label>Nama Lengkap</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.name"
                   placeholder="Nama Lengkap"
@@ -29,10 +29,10 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <div class="form-group">
                 <label>NISN</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nisn"
                   placeholder="NISN"
@@ -49,7 +49,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>NIK</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nik"
                   placeholder="NIK"
@@ -68,7 +68,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Berat Badan</label>
-                <input
+                <input disabled
                   type="number"
                   v-model="santri.berat_badan"
                   placeholder="0 Kg"
@@ -85,7 +85,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Tinggi Badan</label>
-                <input
+                <input disabled
                   type="number"
                   v-model="santri.tinggi_badan"
                   placeholder="0 cm"
@@ -104,7 +104,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Tempat Lahir</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.tempat_lahir"
                   placeholder="Tempat Lahir"
@@ -121,7 +121,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Tanggal Lahir</label>
-                <input
+                <input disabled
                   type="date"
                   v-model="santri.tanggal_lahir"
                   placeholder="Tanggal Lahir"
@@ -141,6 +141,7 @@
               <div class="form-group">
                 <label>Tingkat</label>
                 <select
+                  disabled
                   class="form-control"
                   v-model="santri.jenis_tingkatan_id"
                 >
@@ -166,6 +167,7 @@
                 <label>Jenis Kelamin</label>
                 <div class="row">
                   <b-form-radio
+                    disabled
                     class="mx-3"
                     v-model="santri.jenis_kelamin"
                     name="kelamin"
@@ -192,7 +194,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Anak Ke-</label>
-                <input
+                <input disabled
                   type="number"
                   v-model="santri.anak_ke"
                   placeholder="0"
@@ -209,7 +211,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Jumlah Saudara Kandung</label>
-                <input
+                <input disabled
                   type="number"
                   v-model="santri.jumlah_saudara_kandung"
                   placeholder="0"
@@ -228,7 +230,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>NPSN Sekolah Asal</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.npsn_sekolah_asal"
                   placeholder="NPSN Sekolah Asal"
@@ -245,7 +247,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Nama Sekolah Asal</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nama_sekolah_asal"
                   placeholder="Nama Sekolah Asal"
@@ -264,7 +266,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Alamat Sekolah Asal</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.alamat_sekolah_asal"
                   placeholder="Alamat Sekolah Asal"
@@ -281,7 +283,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Kode Pos</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.kode_pos"
                   placeholder="Kode Pos"
@@ -300,7 +302,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Nama Ayah</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nama_ayah"
                   placeholder="Nama Ayah"
@@ -317,7 +319,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Nama Ibu</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nama_ibu"
                   placeholder="Nama Ibu"
@@ -336,7 +338,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>NIK Ayah</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nik_ayah"
                   placeholder="NIK Ayah"
@@ -353,7 +355,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>NIK Ibu</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.nik_ibu"
                   placeholder="NIK Ibu"
@@ -372,7 +374,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Pekerjaan Ayah</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.pekerjaan_ayah"
                   placeholder="Pekerjaan Ayah"
@@ -389,7 +391,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Pekerjaan Ibu</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.pekerjaan_ibu"
                   placeholder="Pekerjaan Ibu"
@@ -408,7 +410,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Nomor Kartu Keluarga</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.no_kk"
                   placeholder="Nomor Kartu Keluarga"
@@ -425,7 +427,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>No Hp</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.no_hp"
                   placeholder="contoh: 085157483455"
@@ -444,7 +446,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Alamat</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.alamat"
                   placeholder="Alamat"
@@ -460,7 +462,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Rata-Rata Penghasilan</label>
-                <input
+                <input disabled
                   type="text"
                   v-model="santri.rata_rata_penghasilan"
                   placeholder="Rata-Rata Penghasilan"
@@ -474,14 +476,450 @@
               </div>
             </div>
           </div>
+           <!-- ISIAN BARU -->
+          <h4 class="my-4">ISIAN BARU</h4>
 
           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Kewarganegaraan</label>
+              <input 
+                type="text"
+                v-model="santri.kewarganegaraan"
+                placeholder="cth: indonesia / malaysia / ..."
+                class="form-control"
+              />
+              <div v-if="validation.kewarganegaraan" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.kewarganegaraan[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <label>Password</label>
-              <input
+              <label>No Paspor</label>
+              <input 
                 type="text"
+                v-model="santri.no_paspor"
+                placeholder="hanya diisi untuk santri berkewarganegaraan asing"
+                class="form-control"
+              />
+              <div v-if="validation.no_paspor" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.no_paspor[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Agama</label>
+              <select
+                  class="form-control"
+                  v-model="santri.agama"
+                >
+                  <option value="">-- pilih agama --</option>
+                  <option
+                    v-for="ag in agama"
+                    :key="ag"
+                    :value="ag"
+                  >
+                    {{ ag }}
+                  </option>
+                </select>
+              <div v-if="validation.agama" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.agama[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>No KIP</label>
+              <input 
+                type="text"
+                v-model="santri.no_kip"
+                placeholder="jika memiliki"
+                class="form-control"
+              />
+              <div v-if="validation.no_kip" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.no_kip[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>No PKH</label>
+               <input 
+                type="text"
+                v-model="santri.no_pkh"
+                placeholder="jika memiliki"
+                class="form-control"
+              />
+              <div v-if="validation.no_pkh" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.no_pkh[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>No KKS</label>
+              <input 
+                type="text"
+                v-model="santri.no_kks"
+                placeholder="jika memiliki"
+                class="form-control"
+              />
+              <div v-if="validation.no_kks" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.no_kks[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Tanggal Masuk</label>
+               <input 
+                type="date"
+                v-model="santri.tanggal_masuk"
+                class="form-control"
+              />
+              <div v-if="validation.tanggal_masuk" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.tanggal_masuk[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Hobi</label>
+               <select
+                  class="form-control"
+                  v-model="santri.hoby"
+                >
+                  <option value="">-- pilih hoby --</option>
+                  <option
+                    v-for="hb in hoby"
+                    :key="hb"
+                    :value="hb"
+                  >
+                    {{ hb }}
+                  </option>
+                </select>
+              <div v-if="validation.hoby" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.hoby[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Cita-Cita</label>
+              <select
+                  class="form-control"
+                  v-model="santri.cita_cita"
+                >
+                  <option value="">-- pilih cita cita --</option>
+                  <option
+                    v-for="cita in cita_cita"
+                    :key="cita"
+                    :value="cita"
+                  >
+                    {{ cita }}
+                  </option>
+                </select>
+              <div v-if="validation.cita_cita" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.cita_cita[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Kebutuhan  Khusus</label>
+               <select
+                  class="form-control"
+                  v-model="santri.kebutuhan_khusus"
+                >
+                  <option value="">-- pilih kebutuhan khusus --</option>
+                  <option
+                    v-for="kk in kebutuhan_khusus"
+                    :key="kk"
+                    :value="kk"
+                  >
+                    {{ kk }}
+                  </option>
+                </select>
+              <div v-if="validation.kebutuhan_khusus" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.kebutuhan_khusus[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Pendidikan Ayah</label>
+               <input 
+                type="text"
+                v-model="santri.pendidikan_ayah"
+                placeholder="pendidikan ayah"
+                class="form-control"
+              />
+              <div v-if="validation.pendidikan_ayah" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.pendidikan_ayah[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Pendidikan Ibu</label>
+              <input 
+                type="text"
+                v-model="santri.pendidikan_ibu"
+                placeholder="pendidikan ibu"
+                class="form-control"
+              />
+              <div v-if="validation.pendidikan_ibu" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.pendidikan_ibu[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Telepon Ayah</label>
+               <input 
+                type="text"
+                v-model="santri.telepon_ayah"
+                placeholder="telepon ayah"
+                class="form-control"
+              />
+              <div v-if="validation.telepon_ayah" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.telepon_ayah[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Telepon Ibu</label>
+              <input 
+                type="text"
+                v-model="santri.telepon_ibu"
+                placeholder="telepon ibu"
+                class="form-control"
+              />
+              <div v-if="validation.telepon_ibu" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.telepon_ibu[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>RT/RW</label>
+               <input 
+                type="text"
+                v-model="santri.rt_rw"
+                placeholder="RT / RW"
+                class="form-control"
+              />
+              <div v-if="validation.rt_rw" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.rt_rw[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Kecamatan</label>
+              <input 
+                type="text"
+                v-model="santri.kecamatan"
+                placeholder="kecamatan"
+                class="form-control"
+              />
+              <div v-if="validation.kecamatan" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.kecamatan[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Kabupaten</label>
+               <input 
+                type="text"
+                v-model="santri.kabupaten"
+                placeholder="kabupaten"
+                class="form-control"
+              />
+              <div v-if="validation.kabupaten" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.kabupaten[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Provinsi</label>
+              <input 
+                type="text"
+                v-model="santri.provinsi"
+                placeholder="provinsi"
+                class="form-control"
+              />
+              <div v-if="validation.provinsi" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.provinsi[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+            <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Hubungan Wali</label>
+               <input 
+                type="text"
+                v-model="santri.hubungan_wali"
+                placeholder="Kakak/Paman/Keponakan/..."
+                class="form-control"
+              />
+              <div v-if="validation.hubungan_wali" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.hubungan_wali[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>NIK Wali</label>
+              <input 
+                type="text"
+                v-model="santri.nik_wali"
+                placeholder="nik wali"
+                class="form-control"
+              />
+              <div v-if="validation.nik_wali" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.nik_wali[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
+           <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nama Wali</label>
+               <input 
+                type="text"
+                v-model="santri.nama_wali"
+                placeholder="nama wali"
+                class="form-control"
+              />
+              <div v-if="validation.nama_wali" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.nama_wali[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Pekerjaan Wali</label>
+              <input 
+                type="text"
+                v-model="santri.pekerjaan_wali"
+                placeholder="pekerjaan wali"
+                class="form-control"
+              />
+              <div v-if="validation.pekerjaan_wali" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.pekerjaan_wali[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          
+
+          <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Password</label>
+              <input 
+                type="password"
                 v-model="santri.password"
                 placeholder="Password"
                 class="form-control"
@@ -497,8 +935,8 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Konfirmasi Password</label>
-              <input
-                type="text"
+              <input 
+                type="password"
                 v-model="santri.password_confirmation"
                 placeholder="Konfirmasi Password"
                 class="form-control"
@@ -513,82 +951,7 @@
 
           </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>Foto Santri</label>
-              <b-form-file
-                @change="handleFileFotoSantriChange"
-                size="sm"
-              ></b-form-file>
-              <div v-if="validation.foto_santri" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.foto_santri[0]
-                }}</b-alert>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>Ijazah</label>
-              <b-form-file
-                @change="handleFileIjazahChange"
-                size="sm"
-              ></b-form-file>
-              <div v-if="validation.foto_ijazah" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.foto_ijazah[0]
-                }}</b-alert>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>Foto NISN</label>
-              <b-form-file
-                @change="handleFileNISNChange"
-                size="sm"
-              ></b-form-file>
-              <div v-if="validation.foto_nisn" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.foto_nisn[0]
-                }}</b-alert>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>Akte Santri</label>
-              <b-form-file
-                @change="handleFileAkteChange"
-                size="sm"
-              ></b-form-file>
-              <div v-if="validation.akte_santri" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.akte_santri[0]
-                }}</b-alert>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>Bukti Pembayaran</label>
-              <b-form-file
-                @change="handleFileBuktiAkteChange"
-                size="sm"
-              ></b-form-file>
-              <div v-if="validation.bukti_pembayaran" class="mt-2">
-                <b-alert show variant="danger">{{
-                  validation.bukti_pembayaran[0]
-                }}</b-alert>
-              </div>
-            </div>
-          </div>
-        </div>
+     
           
           <button class="btn btn-info mx-2 rounded btn-submit" type="submit">
             <i class="fa fa-paper-plane"></i> Kirim
@@ -608,6 +971,8 @@ export default {
   components: {
     mdbInput,
   },
+
+  layout: "santri",
 
   data() {
     return {
@@ -656,6 +1021,10 @@ export default {
         nama_wali: "",
         pekerjaan_wali: "",
         alamat: "",
+        rt_rw: "",
+        kecamatan: "",
+        kabupaten: "",
+        provinsi: "",
         no_hp: "",
         foto_santri: "",
         foto_ijazah: "",
@@ -697,14 +1066,16 @@ export default {
         "kesulitan_belajar",
       ],
       agama: ["islam", "kristen", "hindu", "buddha", "konghucu"],
+      
       //state validation
       validation: [],
     };
   },
 
   //hook "asyncData"
-  async asyncData({ store }) {
+  async asyncData({ store, route}) {
     //get list all categories
+    await store.dispatch("santribaru/santriBaru/getDetailSantriBaru", route.params.id);
     await store.dispatch("santribaru/jenisTingkat/getListTingkat");
   },
 
@@ -716,12 +1087,65 @@ export default {
     },
   },
 
+  mounted(){
+    this.santri.name                = this.$store.state.santribaru.santriBaru.santriBaru.name
+    this.santri.kewarganegaraan                = this.$store.state.santribaru.santriBaru.santriBaru.kewarganegaraan
+    this.santri.no_paspor                = this.$store.state.santribaru.santriBaru.santriBaru.no_paspor
+    this.santri.no_kip                = this.$store.state.santribaru.santriBaru.santriBaru.no_kip
+    this.santri.no_pkh                = this.$store.state.santribaru.santriBaru.santriBaru.no_pkh
+    this.santri.no_kks                = this.$store.state.santribaru.santriBaru.santriBaru.no_kks
+    this.santri.hoby                = this.$store.state.santribaru.santriBaru.santriBaru.hoby
+    this.santri.kebutuhan_khusus                = this.$store.state.santribaru.santriBaru.santriBaru.kebutuhan_khusus
+    this.santri.cita_cita                = this.$store.state.santribaru.santriBaru.santriBaru.cita_cita
+    this.santri.berat_badan             = this.$store.state.santribaru.santriBaru.santriBaru.berat_badan
+    this.santri.tinggi_badan              = this.$store.state.santribaru.santriBaru.santriBaru.tinggi_badan
+    this.santri.jenis_tingkatan_id              = this.$store.state.santribaru.santriBaru.santriBaru.jenis_tingkatan_id;
+    this.santri.nism                = this.$store.state.santribaru.santriBaru.santriBaru.nism
+    this.santri.nisn                = this.$store.state.santribaru.santriBaru.santriBaru.nisn
+    this.santri.nik                 = this.$store.state.santribaru.santriBaru.santriBaru.nik
+    this.santri.tempat_lahir        = this.$store.state.santribaru.santriBaru.santriBaru.tempat_lahir
+    this.santri.tanggal_lahir       = this.$store.state.santribaru.santriBaru.santriBaru.tanggal_lahir
+    this.santri.jenis_kelamin       = this.$store.state.santribaru.santriBaru.santriBaru.jenis_kelamin
+    this.santri.agama               = this.$store.state.santribaru.santriBaru.santriBaru.agama
+    this.santri.anak_ke               = this.$store.state.santribaru.santriBaru.santriBaru.anak_ke
+    this.santri.jumlah_saudara_kandung               = this.$store.state.santribaru.santriBaru.santriBaru.jumlah_saudara_kandung
+    this.santri.tanggal_masuk       = this.$store.state.santribaru.santriBaru.santriBaru.tanggal_masuk
+    this.santri.npsn_sekolah_asal           = this.$store.state.santribaru.santriBaru.santriBaru.npsn_sekolah_asal
+    this.santri.nama_sekolah_asal   = this.$store.state.santribaru.santriBaru.santriBaru.nama_sekolah_asal
+    this.santri.alamat_sekolah_asal = this.$store.state.santribaru.santriBaru.santriBaru.alamat_sekolah_asal
+    this.santri.kode_pos = this.$store.state.santribaru.santriBaru.santriBaru.kode_pos
+    this.santri.rata_rata_penghasilan = this.$store.state.santribaru.santriBaru.santriBaru.rata_rata_penghasilan
+    this.santri.no_kk = this.$store.state.santribaru.santriBaru.santriBaru.no_kk
+    this.santri.nama_ayah           = this.$store.state.santribaru.santriBaru.santriBaru.nama_ayah
+    this.santri.nik_ayah            = this.$store.state.santribaru.santriBaru.santriBaru.nik_ayah
+    this.santri.pekerjaan_ayah      = this.$store.state.santribaru.santriBaru.santriBaru.pekerjaan_ayah
+    this.santri.pendidikan_ayah      = this.$store.state.santribaru.santriBaru.santriBaru.pendidikan_ayah
+    this.santri.telepon_ayah      = this.$store.state.santribaru.santriBaru.santriBaru.telepon_ayah
+    this.santri.nama_ibu            = this.$store.state.santribaru.santriBaru.santriBaru.nama_ibu
+    this.santri.nik_ibu             = this.$store.state.santribaru.santriBaru.santriBaru.nik_ibu
+    this.santri.pekerjaan_ibu       = this.$store.state.santribaru.santriBaru.santriBaru.pekerjaan_ibu
+    this.santri.pendidikan_ibu       = this.$store.state.santribaru.santriBaru.santriBaru.pendidikan_ibu
+    this.santri.telepon_ibu       = this.$store.state.santribaru.santriBaru.santriBaru.telepon_ibu
+    this.santri.rt_rw       = this.$store.state.santribaru.santriBaru.santriBaru.rt_rw
+    this.santri.kecamatan       = this.$store.state.santribaru.santriBaru.santriBaru.kecamatan
+    this.santri.kabupaten       = this.$store.state.santribaru.santriBaru.santriBaru.kabupaten
+    this.santri.provinsi       = this.$store.state.santribaru.santriBaru.santriBaru.provinsi
+    this.santri.hubungan_wali       = this.$store.state.santribaru.santriBaru.santriBaru.hubungan_wali
+    this.santri.nama_wali       = this.$store.state.santribaru.santriBaru.santriBaru.nama_wali
+    this.santri.nik_wali       = this.$store.state.santribaru.santriBaru.santriBaru.nik_wali
+    this.santri.pekerjaan_wali       = this.$store.state.santribaru.santriBaru.santriBaru.pekerjaan_wali
+    this.santri.alamat              = this.$store.state.santribaru.santriBaru.santriBaru.alamat
+    this.santri.no_hp               = this.$store.state.santribaru.santriBaru.santriBaru.no_hp
+    this.santri.kelas_id            = this.$store.state.santribaru.santriBaru.santriBaru.kelas_id
+    this.santri.angkatan_id         = this.$store.state.santribaru.santriBaru.santriBaru.angkatan_id
+    this.santri.rapot_id            = this.$store.state.santribaru.santriBaru.santriBaru.rapot_id
+  },
+
   methods: {
     //handle file upload
     handleFileFotoSantriChange(e) {
       //get foto_santri
-      if(e.target.files[0]){
-        let image = (this.santri.foto_santri = e.target.files[0]);
+      let image = (this.santri.foto_santri = e.target.files[0]);
 
       //check fileType
       if (!image.type.match("image.*")) {
@@ -734,14 +1158,12 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung! Pastikan Berupa img / png /jpg!",
+          text: "Format File Tidak Didukung!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
         });
       }
-      }
-      
     },
 
     handleFileIjazahChange(e) {
@@ -757,7 +1179,7 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung, Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
@@ -768,8 +1190,7 @@ export default {
     },
 
     handleFileNISNChange(e) {
-      if(e.target.files[0]){
-        //get foto_santri
+      //get foto_santri
       let image = (this.santri.foto_nisn = e.target.files[0]);
       //check fileType
       if (!image.type.match("application.[pdf]")) {
@@ -780,19 +1201,16 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung! Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
         });
       }
-      }
-      
     },
 
     handleFileAkteChange(e) {
-      if(e.target.files[0]){
-         //get foto_santri
+      //get foto_santri
       let image = (this.santri.akte_santri = e.target.files[0]);
       //check fileType
       if (!image.type.match("application.[pdf]")) {
@@ -803,19 +1221,16 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung! Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
         });
       }
-      }
-     
     },
 
     handleFileBuktiAkteChange(e) {
-      if (e.target.files[0]){
-         //get bukti pembayaran
+      //get foto_santri
       let image = (this.santri.bukti_pembayaran = e.target.files[0]);
       //check fileType
       if (!image.type.match("image.*")) {
@@ -826,17 +1241,15 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung, Pastikan Berupa img / png /jpg!",
+          text: "Format File Tidak Didukung!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
         });
       }
-      }
-     
     },
     //method "storeSantri"
-    async storeSantri() {
+    async updateSantri() {
       
       //define formData
       let formData = new FormData();
@@ -895,44 +1308,37 @@ export default {
       formData.append("kabupaten", this.santri.kabupaten);
       formData.append("provinsi", this.santri.provinsi);
       formData.append("no_hp", this.santri.no_hp);
-      formData.append("foto_santri", this.santri.foto_santri);
-      formData.append("foto_ijazah", this.santri.foto_ijazah);
-      formData.append("foto_nisn", this.santri.foto_nisn);
-      formData.append("akte_santri", this.santri.akte_santri);
-      formData.append("bukti_pembayaran", this.santri.bukti_pembayaran);
+      // formData.append("foto_santri", this.santri.foto_santri);
+      // formData.append("foto_ijazah", this.santri.foto_ijazah);
+      // formData.append("foto_nisn", this.santri.foto_nisn);
+      // formData.append("akte_santri", this.santri.akte_santri);
+      // formData.append("bukti_pembayaran", this.santri.bukti_pembayaran);
       formData.append("password", this.santri.password);
       formData.append("password_confirmation", this.santri.password_confirmation);
+      formData.append("_method", 'PATCH');
 
-      //sending data to action "storeWali" vuex
-      // await this.$store
-      //   .dispatch("santribaru/santriBaru/storeSantriBaru", formData)
-          await this.$axios.post('/api/pendaftaran/register_santri/',formData)
-        //success
-        .then((response) => {
-          //sweet alert
-          this.user = response.data.data.id
-          this.$swal
-        .fire({
-          title: "Pendaftaran Berhasil",
-          text: `Harap Simpan Data No Pendaftaran : ${response.data.data.no_pendaftaran} dan Password: yang sudah anda buat`,
-          icon: "success",
-          showCancelButton: true,
-          confirmButtonColor: "#d33",
-          cancelButtonColor: "#3085d6",
-          confirmButtonText: "Sudah Disimpan!",
-        
+
+       await this.$store
+        .dispatch("santribaru/santriBaru/updateSantriBaru", {
+          santriId: this.$route.params.id,
+          payload: formData,
         })
-        .then((result) => {
-          if (result.isConfirmed) {
-            this.$swal.close();
-          }
-        });
-          
 
-          // redirect route "admin-santris"
+        //success
+        .then(() => {
+          //sweet alert
+          this.$swal.fire({
+            title: "BERHASIL!",
+            text: "Berhasil Daftar Ulang!",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+
+          //redirect route "admin-santris"
           this.$router.push({
-            name: "pendaftaran-login",
-            params: { id:  this.user.id},
+            name: "pendaftaran-dashboard-id",
+            params: { id: this.$auth.user.id }
           });
         })
 
@@ -961,6 +1367,9 @@ p {
   font-size: 40px;
 }
 @media (max-width: 600px) {
+  label {
+    font-size:12px;
+  }
   h1 {
     text-align: center;
     margin: 0;

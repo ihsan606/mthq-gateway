@@ -38,7 +38,7 @@
                       variant="info"
                       size="sm"
                     >
-                      EDIT
+                      DETAIL
                     </b-button>
                     <b-button variant="danger" size="sm" @click="destroyAngkatan(row.item.id)">DELETE</b-button>
                   </template>
