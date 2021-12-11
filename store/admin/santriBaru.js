@@ -1,13 +1,14 @@
 //state
 export const state = ()=>({
 
-    santris: [],
+    santribarus: [],
+
+    santribaru:{},
 
     page:1,
 
-    santri:{},
 
-    listSantri:{},
+ 
 
 
 })
@@ -15,9 +16,9 @@ export const state = ()=>({
 
 export const mutations= {
 
-    //mutations "SET_SANTRIS_DATA"
-    SET_SANTRIS_DATA(state,payload){
-        state.santris = payload
+    //mutations "SET_SANTRI_BARUS_DATA"
+    SET_SANTRI_BARUS_DATA(state,payload){
+        state.santribarus = payload
     },
 
     //mutations "SET_PAGE"
@@ -25,20 +26,18 @@ export const mutations= {
         state.page = payload
     },
 
-    //mutations "SET_SANTRI_DATA"
-    SET_SANTRI_DATA(state,payload){
-        state.santri = payload
+    //mutations "SET_SANTRI_BARU_DATA"
+    SET_SANTRI_BARU_DATA(state,payload){
+        state.santribaru = payload
     },
 
-    SET_LIST_SANTRI(state,payload){
-        state.listSantri = payload
-    }
+
 }
 
 
 export const actions= {
 
-    getSantrisData({commit,state},payload){
+    getSantriBarusData({commit,state},payload){
 
         //search\
         let search = payload ? payload :''
@@ -46,13 +45,13 @@ export const actions= {
         //set promises
         return new Promise((resolve, reject) =>{
 
-            //fetch data to from REST API "/api/admin/santris" with method GET
-            this.$axios.get(`/api/admin/santris?q=${search}&page=${state.page}`)
+            //fetch data to from REST API "/api/admin/pendaftaran" with method GET
+            this.$axios.get(`/api/admin/pendaftaran?q=${search}&page=${state.page}`)
 
 
             //success
             .then((response) =>{
-                commit('SET_SANTRIS_DATA',response.data.data)
+                commit('SET_SANTRI_BARUS_DATA',response.data.data)
 
 
                 resolve()
@@ -60,84 +59,23 @@ export const actions= {
         })
     },
     
-    getListSantri({commit,state},payload){
-
-        //search\
-        let search = payload ? payload :''
-
-        //set promises
-        return new Promise((resolve, reject) =>{
-
-            //fetch data to from REST API "/api/admin/santris" with method GET
-            this.$axios.get(`/api/admin/santri_list`)
 
 
-            //success
-            .then((response) =>{
-                commit('SET_LIST_SANTRI',response.data.data)
+  
 
-
-                resolve()
-            })
-        })
-    },
-    storeSantri({dispatch, commit},payload){
-
-        //set promises
-        return new Promise((resolve, reject) =>{
-
-            this.$axios.post('/api/admin/santris/',payload)
-
-            //success
-            .then(()=>{
-
-                //dispatch action getSantrisData
-                dispatch('getSantrisData')
-
-                resolve()
-            })
-
-            .catch((error) =>{
-                reject(error)
-            })
-        })
-    },
-
-    importSantri({dispatch, commit},payload){
-
-        //set promises
-        return new Promise((resolve, reject) =>{
-
-            this.$axios.post('/api/admin/santris/import',payload)
-
-            //success
-            .then(()=>{
-
-                //dispatch action getSantrisData
-                dispatch('getSantrisData')
-
-                resolve()
-            })
-
-            .catch((error) =>{
-                reject(error)
-            })
-        })
-    },
-
-    //action detail santri
-    getDetailSantri({commit},payload) {
+    //action detail santri baru
+    getDetailSantriBaru({commit},payload) {
         //set promise
         return new Promise((resolve, reject) => {
 
-            //get to Rest API "/api/admin/santris/:id" with method "GET"
-            this.$axios.get(`/api/admin/santris/${payload}`)
-
+            //get to Rest API "/api/admin/pendaftaran/:id" with method "GET"
+            this.$axios.get(`/api/admin/pendaftaran/${payload}`)
+            
             //success
             .then(response => {
 
                 //commit to mutation "SET_SANTRI_DATA"
-                commit('SET_SANTRI_DATA', response.data.data)
+                commit('SET_SANTRI_BARU_DATA', response.data.data)
 
                 //resolve promise
                 resolve()
@@ -148,19 +86,19 @@ export const actions= {
     },
 
     //update santri
-    updateSantri({ dispatch, commit }, { santriId, payload }) {
+    updateSantriBaru({ dispatch, commit }, { santriId, payload }) {
 
         //set promise
         return new Promise((resolve, reject) => {
 
-            //store to Rest API "/api/admin/santris/:id" with method "POST"
-            this.$axios.post(`/api/admin/santris/${santriId}`, payload)
+            //store to Rest API "/api/admin/pendaftaran/:id" with method "POST"
+            this.$axios.post(`/api/admin/pendaftaran/${santriId}`, payload)
 
             //success
             .then(() => {
 
-                //dispatch action "getSantrisData"
-                dispatch('getSantrisData')
+                //dispatch action "getSantriBarusData"
+                dispatch('getSantriBarusData')
 
                 //resolve promise
                 resolve()
@@ -175,21 +113,45 @@ export const actions= {
         })
     },
 
-
-    //destroy santri
-    destroySantri({ dispatch, commit }, payload) {
+     //pindah santri baru yang lulus ke table santri utama
+     migrateSantriBaru({ dispatch, commit }) {
 
         //set promise
         return new Promise((resolve, reject) => {
         
-            //delete to Rest API "/api/admin/santris/:id" with method "DELETE"
-            this.$axios.delete(`/api/admin/santris/${payload}`)
+            //delete to Rest API "/api/admin/pendaftaran/migrate" with method "POST"
+            this.$axios.post(`/api/admin/pendaftaran/pindah`)
 
             //success
             .then(() => {
 
-                //dispatch action "getSantrisData"
-                dispatch('getSantrisData')
+                //dispatch action "getSantriBarusData"
+                dispatch('getSantriBarusData')
+
+                //resolve promise
+                resolve()
+
+            })
+
+        })
+
+    },
+
+
+    //destroy santri baru yang tidak lulus
+    destroySantriBaru({ dispatch, commit }) {
+
+        //set promise
+        return new Promise((resolve, reject) => {
+        
+            //delete to Rest API "/api/admin/pendaftaran/:id" with method "DELETE"
+            this.$axios.delete(`/api/admin/pendaftaran/hapus`)
+
+            //success
+            .then(() => {
+
+                //dispatch action "getSantriBarusData"
+                dispatch('getSantriBarusData')
 
                 //resolve promise
                 resolve()

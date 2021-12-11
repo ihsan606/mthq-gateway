@@ -54,8 +54,9 @@
             </b-list-group>
           </div>
 
-          <div class="card rounded shadow-sm">
+          <div class="card rounded shadow-sm mb-5">
             <nuxt-link
+            title="Anda Sudah Daftar Ulang"
             target="_blank"
               :to="{
                 name: 'pendaftaran-cetak_kartu-id',
@@ -70,10 +71,13 @@
                 name: 'pendaftaran-daftarulang-id',
                 params: { id: this.$auth.user.id },
               }"
+              
               class="btn btn-info shadow my-2 mx-5"
+              :class="{disabled:santri.kewarganegaraan !== ''}"
               >Daftar Ulang</nuxt-link
             >
           </div>
+        
         </div>
       </div>
     </div>

@@ -18,16 +18,6 @@
                 >
                   <i class="fa fa-plus-circle"></i> ADD NEW</nuxt-link
                 >
-                <button
-                  type="button"
-                  class="btn btn-success p-2"
-                  @click="toggleModal"
-                  data-target="#import"
-                  id="toggle-btn"
-                >
-                <i class="fa fa-file-import"></i>
-                  IMPORT
-                </button>
                 </div>
                 <div class="table-responsive">
                   <b-table

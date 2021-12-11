@@ -958,9 +958,9 @@
           </button>
         </form>
          
-          <div class="space my-5">.</div>
       </div>
     </div>
+          <div class="space my-5">.</div>
   </main>
 </template>
 
@@ -1031,6 +1031,7 @@ export default {
         foto_nisn: "",
         akte_santri: "",
         bukti_pembayaran: "",
+        surat_rekomendasi: "",
         password: "",
         password_confirmation: "",
 
@@ -1270,10 +1271,7 @@ export default {
       formData.append("tanggal_lahir", this.santri.tanggal_lahir);
       formData.append("jenis_kelamin", this.santri.jenis_kelamin);
       formData.append("anak_ke", this.santri.anak_ke);
-      formData.append(
-        "jumlah_saudara_kandung",
-        this.santri.jumlah_saudara_kandung
-      );
+      formData.append("jumlah_saudara_kandung",this.santri.jumlah_saudara_kandung);
       formData.append("nama_sekolah_asal", this.santri.nama_sekolah_asal);
       formData.append("npsn_sekolah_asal", this.santri.npsn_sekolah_asal);
       formData.append("alamat_sekolah_asal", this.santri.alamat_sekolah_asal);
@@ -1287,10 +1285,7 @@ export default {
       formData.append("nik_ayah", this.santri.nik_ayah);
       formData.append("pekerjaan_ayah", this.santri.pekerjaan_ayah);
       formData.append("pendidikan_ayah", this.santri.pendidikan_ayah);
-      formData.append(
-        "rata_rata_penghasilan",
-        this.santri.rata_rata_penghasilan
-      );
+      formData.append("rata_rata_penghasilan",this.santri.rata_rata_penghasilan);
       formData.append("telepon_ayah", this.santri.telepon_ayah);
       formData.append("nama_ibu", this.santri.nama_ibu);
       formData.append("nik_ibu", this.santri.nik_ibu);

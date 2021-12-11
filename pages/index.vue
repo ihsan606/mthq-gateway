@@ -8,6 +8,8 @@
           
         </div>
       </div>
+      <div class="card border-0 rounded shadow-sm border-top-blue" style="background-color: white"> 
+        <div class="card-body">
       <div class="bform">
         <form @submit.prevent="storeSantri">
           <div class="row">
@@ -588,6 +590,21 @@
               </div>
             </div>
           </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Surat Rekomendasi</label>
+              <b-form-file
+                @change="handleFileRekomendasiChange"
+                size="sm"
+              ></b-form-file>
+              <div v-if="validation.surat_rekomendasi" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.surat_rekomendasi[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
         </div>
           
           <button class="btn btn-info mx-2 rounded btn-submit" type="submit">
@@ -595,8 +612,11 @@
           </button>
         </form>
          
-          <div class="space my-5">.</div>
       </div>
+
+        </div>
+      </div>
+          <div class="space my-5">.</div>
     </div>
   </main>
 </template>
@@ -662,6 +682,7 @@ export default {
         foto_nisn: "",
         akte_santri: "",
         bukti_pembayaran: "",
+        surat_rekomendasi: "",
         password: "",
         password_confirmation: "",
 
@@ -835,6 +856,29 @@ export default {
       }
      
     },
+
+    handleFileRekomendasiChange(e) {
+      if (e.target.files[0]){
+         //get bukti pembayaran
+      let image = (this.santri.surat_rekomendasi = e.target.files[0]);
+      //check fileType
+      if (!image.type.match("application.[pdf]")) {
+        //if fileType not allowed, then clear value and set null
+        e.target.value = "";
+        //set state "category.image" to null
+        this.santri.surat_rekomendasi = null;
+        //show sweet alert
+        this.$swal.fire({
+          title: "OOPS!",
+          text: "Format File Tidak Didukung! Pastikan Berupa File PDF Ya!",
+          icon: "error",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      }
+      }
+     
+    },
     //method "storeSantri"
     async storeSantri() {
       
@@ -900,6 +944,7 @@ export default {
       formData.append("foto_nisn", this.santri.foto_nisn);
       formData.append("akte_santri", this.santri.akte_santri);
       formData.append("bukti_pembayaran", this.santri.bukti_pembayaran);
+      formData.append("surat_rekomendasi", this.santri.surat_rekomendasi);
       formData.append("password", this.santri.password);
       formData.append("password_confirmation", this.santri.password_confirmation);
 

@@ -1,11 +1,13 @@
 <template>
   <main class="c-main bg-white">
     <div class="container-fluid">
+     
+      
       <div class="card">
         <h4 class="text-center t-top mx-3 my-5"></h4>
         <div class="col image-box mt-5">
           <img
-            class="d-flex justify-content-center mx-auto rounded mb-3"
+            class="d-flex justify-content-center mx-auto rounded mb-3 shadow"
             :src="santri.foto_santri"
             width="150"
             alt=""
@@ -35,6 +37,7 @@
           </table>
         </div>
       </div>
+      
     </div>
   </main>
 </template>

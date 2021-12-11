@@ -50,16 +50,10 @@
 
     <li class="c-sidebar-nav-title">OTHERS</li>
 
-    <li class="c-sidebar-nav-item"><a href="#" class="c-sidebar-nav-link">
+    <li class="c-sidebar-nav-item"><nuxt-link :to="{name:'admin-pendaftaran'}" class="c-sidebar-nav-link">
         <svg class="c-sidebar-nav-icon">
           <use xlink:href="@/node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
-        </svg> Pendaftaran</a>
-    </li>
-
-    <li class="c-sidebar-nav-item"><a href="#" class="c-sidebar-nav-link">
-        <svg class="c-sidebar-nav-icon">
-          <use xlink:href="@/node_modules/@coreui/icons/sprites/free.svg#cil-laptop"></use>
-        </svg> Sliders</a>
+        </svg> Pendaftaran</nuxt-link>
     </li>
 
     <li class="c-sidebar-nav-item"><nuxt-link :to="{name:'admin-user'}" class="c-sidebar-nav-link">
