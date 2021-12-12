@@ -62,16 +62,19 @@
                     <i class="fa fa-redo"></i> RESET
                   </button>
                 </form>
-                 <!-- <iframe v-if="santri.foto_santri" :src="santri.foto_santri" class="my-3" width="100%" height="500px"> -->
-                <!-- </iframe> -->
-                 <iframe v-if="santri.foto_ijazah" :src="santri.foto_ijazah" class="my-3" width="100%" height="500px">
+                <p>Foto Santri</p>
+                 <iframe v-if="santri.foto_santri" :src="santri.foto_santri" class="my-3" width="100%" height="500px">
                 </iframe>
+               <p>Foto NISN</p>
                  <iframe v-if="santri.foto_nisn" :src="santri.foto_nisn" class="my-3" width="100%" height="500px">
                 </iframe>
+                <p>Akte Kelahiran</p>
                  <iframe v-if="santri.akte_santri" :src="santri.akte_santri" class="my-3" width="100%" height="500px">
                 </iframe>
+                <p>Bukti Pembayaran</p>
                  <iframe v-if="santri.bukti_pembayaran" :src="santri.bukti_pembayaran" class="my-3" width="100%" height="500px">
                 </iframe>
+                <p>Surat Rekomendasi</p>
                  <iframe v-if="santri.surat_rekomendasi" :src="santri.surat_rekomendasi" class="my-3" width="100%" height="500px">
                 </iframe>
               </div>
