@@ -34,7 +34,7 @@ export const actions= {
         //set promises
         return new Promise((resolve, reject) =>{
 
-            this.$axios.post('/api/pendaftaran/register_santri/',payload)
+            this.$axios.post('/api/pendaftaran/register_santri',payload)
 
             //success
             .then(()=>{

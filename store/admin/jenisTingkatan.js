@@ -61,7 +61,7 @@ export const actions= {
         //set promises
         return new Promise((resolve, reject) =>{
 
-            this.$axios.post('/api/admin/tingkatan/',payload)
+            this.$axios.post('/api/admin/tingkatan',payload)
 
             //success
             .then(()=>{
