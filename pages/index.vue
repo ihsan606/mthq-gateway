@@ -951,7 +951,7 @@ export default {
       //sending data to action "storeWali" vuex
       // await this.$store
       //   .dispatch("santribaru/santriBaru/storeSantriBaru", formData)
-          await this.$axios.post('/api/pendaftaran/register_santri/',formData)
+          await this.$axios.post('/api/pendaftaran/register_santri',formData)
         //success
         .then((response) => {
           //sweet alert
