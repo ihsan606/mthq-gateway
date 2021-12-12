@@ -7,12 +7,12 @@
             <div class="card border-0 rounded shadow-sm border-top-blue">
               <div class="card-header">
                 <span class="font-weight-bold"
-                  ><i class="fas fa-door-open"></i> Kelas</span
+                  ><i class="fas fa-door-open"></i>JENIS TINGKATAN</span
                 >
               </div>
               <div class="card-body">
                 <nuxt-link
-                  :to="{ name: 'admin-kelas-create' }"
+                  :to="{ name: 'admin-tingkatan-create' }"
                   class="btn btn-warning btn-sm mb-3 p-2"
                 >
                   <i class="fa fa-plus-circle"></i> ADD NEW</nuxt-link
@@ -22,7 +22,7 @@
                   striped
                   bordered
                   hover
-                  :items="kelases.data"
+                  :items="jenisTingkatans.data"
                   :fields="fields"
                   show-empty
                 >
@@ -32,7 +32,7 @@
                   <template v-slot:cell(actions)="row">
                     <b-button
                       :to="{
-                        name: 'admin-kelas-edit-id',
+                        name: 'admin-tingkatan-edit-id',
                         params: { id: row.item.id },
                       }"
                       variant="info"
@@ -40,16 +40,16 @@
                     >
                       EDIT
                     </b-button>
-                    <b-button variant="danger" size="sm" @click="destroyKelas(row.item.id)">DELETE</b-button>
+                    <b-button variant="danger" size="sm" @click="destroyTingkatan(row.item.id)">DELETE</b-button>
                   </template>
                 </b-table>
                 </div>
                 <!-- pagination -->
                 <b-pagination
                   align="right"
-                  :value="kelases.current_page"
-                  :total-rows="kelases.total"
-                  :per-page="kelases.per_page"
+                  :value="jenisTingkatans.current_page"
+                  :total-rows="jenisTingkatans.total"
+                  :per-page="jenisTingkatans.per_page"
                   @change="changePage"
                   aria-controls="my-table"
                 ></b-pagination>
@@ -70,7 +70,7 @@ export default {
   //meta
   head() {
     return {
-      title: "Kelas - Administrator",
+      title: "Tingkatan - Administrator",
     };
   },
 
@@ -97,41 +97,39 @@ export default {
 
   //hook "asyncData"
   async asyncData({ store }) {
-    await store.dispatch("admin/kelas/getKelasesData");
+    await store.dispatch("admin/jenisTingkatan/getJenisTingkatansData");
   },
 
   //computed
   computed: {
     //kelas
-    kelases() {
-      return this.$store.state.admin.kelas.kelases;
+    jenisTingkatans() {
+      return this.$store.state.admin.jenisTingkatan.jenisTingkatans;
     },
   },
 
   //method
   methods: {
-
-      
     //method "searchData"
     searchData() {
       //commit to mutation "SET_PAGE"
-      this.$store.commit("admin/kelas/SET_PAGE", 1);
+      this.$store.commit("admin/jenisTingkatan/SET_PAGE", 1);
 
-      //dispatch on action "getKelasesData"
-      this.$store.dispatch("admin/kelas/getKelasesData", this.search);
+      //dispatch on action "getJenisTingkatansData"
+      this.$store.dispatch("admin/jenisTingkatan/getJenisTingkatansData", this.search);
     },
 
     //method "changePage"
     changePage(page) {
       //commit to mutation "SET_PAGE"
-      this.$store.commit("admin/kelas/SET_PAGE", page);
+      this.$store.commit("admin/jenisTingkatan/SET_PAGE", page);
 
-      //dispatch on action "getKelasesData"
-      this.$store.dispatch("admin/kelas/getKelasesData", this.search);
+      //dispatch on action "getJenisTingkatansData"
+      this.$store.dispatch("admin/jenisTingkatan/getJenisTingkatansData", this.search);
     },
 
-    //destroyKelas
-    destroyKelas(id) {
+    //destroyTingkatan
+    destroyTingkatan(id) {
           this.$swal.fire({
             title: 'APAKAH ANDA YAKIN ?',
             text: "INGIN MENGHAPUS DATA INI !",
@@ -145,7 +143,7 @@ export default {
             if (result.isConfirmed) {
 
               //dispatch to action "destroyAngkatan" vuex
-              this.$store.dispatch('admin/kelas/destroyKelas', id)
+              this.$store.dispatch('admin/jenisTingkatan/destroyTingkatan', id)
                 .then(() => {
 
                   //refresh data

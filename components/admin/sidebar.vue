@@ -34,6 +34,11 @@
           <use xlink:href="@/node_modules/@coreui/icons/sprites/free.svg#cil-book"></use>
         </svg> Hafalan</nuxt-link>
     </li>
+    <li class="c-sidebar-nav-item"><nuxt-link :to="{name:'admin-tingkatan'}" class="c-sidebar-nav-link">
+        <svg class="c-sidebar-nav-icon">
+          <use xlink:href="@/node_modules/@coreui/icons/sprites/free.svg#cil-layers"></use>
+        </svg> Tingkatan</nuxt-link>
+    </li>
 
     <li class="c-sidebar-nav-title">Pembayaran</li>
     

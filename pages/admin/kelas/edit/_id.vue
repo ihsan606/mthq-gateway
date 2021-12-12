@@ -145,6 +145,41 @@
     //method
     methods: {
 
+      //destroySantri
+    destroySantri(id) {
+      this.$swal
+        .fire({
+          title: "APAKAH ANDA YAKIN ?",
+          text: "INGIN MENGHAPUS DATA INI !",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "YA, HAPUS!",
+          cancelButtonText: "TIDAK",
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            //dispatch to action "destroyAngkatan" vuex
+            this.$store
+              .dispatch("admin/santri/destroySantri", id)
+              .then(() => {
+                //refresh data
+                this.$nuxt.refresh();
+
+                //alert
+                this.$swal.fire({
+                  title: "BERHASIL!",
+                  text: "Data Berhasil Dihapus!",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 2000,
+                });
+              });
+          }
+        });
+    },
+
       //method "updateKelas"
       async updateKelas() {
 

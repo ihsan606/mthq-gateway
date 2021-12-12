@@ -996,17 +996,17 @@
                     <i class="fa fa-redo"></i> RESET
                   </button>
                 </form>
-                 <iframe :src="santri.foto_santri" class="my-3" width="100%" height="500px">
+                 <iframe v-if="santri.foto_santri" :src="santri.foto_santri" class="my-3" width="100%" height="500px">
                 </iframe>
-                 <iframe :src="santri.foto_ijazah" class="my-3" width="100%" height="500px">
+                 <iframe v-if="santri.foto_ijazah" :src="santri.foto_ijazah" class="my-3" width="100%" height="500px">
                 </iframe>
-                 <iframe :src="santri.foto_nisn" class="my-3" width="100%" height="500px">
+                 <iframe v-if="santri.foto_nisn" :src="santri.foto_nisn" class="my-3" width="100%" height="500px">
                 </iframe>
-                 <iframe :src="santri.akte_santri" class="my-3" width="100%" height="500px">
+                 <iframe v-if="santri.akte_santri" :src="santri.akte_santri" class="my-3" width="100%" height="500px">
                 </iframe>
-                 <iframe :src="santri.bukti_pembayaran" class="my-3" width="100%" height="500px">
+                 <iframe v-if="santri.bukti_pembayaran" :src="santri.bukti_pembayaran" class="my-3" width="100%" height="500px">
                 </iframe>
-                 <iframe :src="santri.surat_rekomendasi" class="my-3" width="100%" height="500px">
+                 <iframe v-if="santri.surat_rekomendasi" :src="santri.surat_rekomendasi" class="my-3" width="100%" height="500px">
                 </iframe>
               </div>
             </div>
@@ -1209,6 +1209,12 @@ export default {
     this.santri.no_hp                           = this.$store.state.admin.santri.santri.no_hp
     this.santri.kelas_id                        = this.$store.state.admin.santri.santri.kelas_id
     this.santri.angkatan_id                     = this.$store.state.admin.santri.santri.angkatan_id
+    this.santri.foto_santri                     = this.$store.state.admin.santri.santri.foto_santri;
+    this.santri.foto_ijazah                     = this.$store.state.admin.santri.santri.foto_ijazah;
+    this.santri.foto_nisn                       = this.$store.state.admin.santri.santri.foto_nisn;
+    this.santri.akte_santri                     = this.$store.state.admin.santri.santri.akte_santri;
+    this.santri.bukti_pembayaran                = this.$store.state.admin.santri.santri.bukti_pembayaran;
+    this.santri.surat_rekomendasi               = this.$store.state.admin.santri.santri.surat_rekomendasi;
   },
 
   methods: {

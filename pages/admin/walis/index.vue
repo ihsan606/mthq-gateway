@@ -29,6 +29,24 @@
                   IMPORT
                 </button>
                 </div>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend"></div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="search"
+                      @keypress.enter="searchData"
+                      placeholder="cari berdasarkan nama wali"
+                    />
+                    <div class="input-group-append">
+                      <button @click="searchData" class="btn btn-warning">
+                        <i class="fa fa-search"></i>
+                        SEARCH
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <div class="table-responsive">
                   <b-table
                     striped

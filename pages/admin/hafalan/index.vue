@@ -19,6 +19,24 @@
                   <i class="fa fa-plus-circle"></i> ADD NEW</nuxt-link
                 >
                 </div>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend"></div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="search"
+                      @keypress.enter="searchData"
+                      placeholder="cari berdasarkan nama santri"
+                    />
+                    <div class="input-group-append">
+                      <button @click="searchData" class="btn btn-warning">
+                        <i class="fa fa-search"></i>
+                        SEARCH
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <div class="table-responsive">
                   <b-table
                     striped
@@ -72,25 +90,7 @@
       </div>
     </div>
 
-    <!-- modal import -->
-     <b-modal ref="hafalan-modal" hide-footer title="Import Data hafalan Santri">
-       
-  
-            <form @submit.prevent="importWali" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>PILIH FILE</label>
-                        <input type="file" name="file" @change="handleFileChange" class="form-control" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" @click="toggleModal">TUTUP</button>
-                    <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
-                    IMPORT</button>
-                </div>
-            </form>
-      
-      </b-modal>
+    
   </main>
 </template>
 
@@ -159,27 +159,23 @@ export default {
 
   //method
   methods: {
-    toggleModal() {
-        // We pass the ID of the button that we want to return focus to
-        // when the modal has hidden
-        this.$refs['hafalan-modal'].toggle('#toggle-btn')
-      },
+   
     //method "searchData"
     searchData() {
       //commit to mutation "SET_PAGE"
-      this.$store.commit("admin/waliSantri/SET_PAGE", 1);
+      this.$store.commit("admin/hafalan/SET_PAGE", 1);
 
       //dispatch on action "getWalisData"
-      this.$store.dispatch("admin/waliSantri/getWalisData", this.search);
+      this.$store.dispatch("admin/hafalan/getHafalansData", this.search);
     },
 
     //method "changePage"
     changePage(page) {
       //commit to mutation "SET_PAGE"
-      this.$store.commit("admin/waliSantri/SET_PAGE", page);
+      this.$store.commit("admin/hafalan/SET_PAGE", page);
 
       //dispatch on action "getWalisData"
-      this.$store.dispatch("admin/waliSantri/getWalisData", this.search);
+      this.$store.dispatch("admin/hafalan/getHafalansData", this.search);
     },
 
     //destroyHafalan

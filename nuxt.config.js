@@ -79,8 +79,25 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/pwa',
   ],
+
+  pwa: {
+    meta: {
+      title: 'MTHQ GATEWAY - SISTEM INFORMASI AKADEMIK PESANTREN',
+      author: 'SUNS DEVELOPER'
+    },
+    manifest: {
+      name: 'MTHQ GATEWAY',
+      short_name: 'MTHQ',
+      description: 'Sistem Informasi Akademik MTHQ',
+      lang: 'en'
+    },
+    icon: {
+      fileName: 'images/logo.png',
+      sizes: [64, 120, 144, 152, 192, 384, 512]
+    }
+  },
 
 
 

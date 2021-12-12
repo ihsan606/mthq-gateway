@@ -62,6 +62,18 @@
                     <i class="fa fa-redo"></i> RESET
                   </button>
                 </form>
+                 <!-- <iframe v-if="santri.foto_santri" :src="santri.foto_santri" class="my-3" width="100%" height="500px"> -->
+                <!-- </iframe> -->
+                 <iframe v-if="santri.foto_ijazah" :src="santri.foto_ijazah" class="my-3" width="100%" height="500px">
+                </iframe>
+                 <iframe v-if="santri.foto_nisn" :src="santri.foto_nisn" class="my-3" width="100%" height="500px">
+                </iframe>
+                 <iframe v-if="santri.akte_santri" :src="santri.akte_santri" class="my-3" width="100%" height="500px">
+                </iframe>
+                 <iframe v-if="santri.bukti_pembayaran" :src="santri.bukti_pembayaran" class="my-3" width="100%" height="500px">
+                </iframe>
+                 <iframe v-if="santri.surat_rekomendasi" :src="santri.surat_rekomendasi" class="my-3" width="100%" height="500px">
+                </iframe>
               </div>
             </div>
           </div>
@@ -89,6 +101,12 @@ export default {
       santri: {
         nama: "",
         status: "",
+        foto_santri: "",
+        foto_ijazah: "",
+        foto_nisn: "",
+        akte_santri: "",
+        bukti_pembayaran: "",
+        surat_rekomendasi: "",
       },
 
       statuses: ["lulus", "belum_lulus", "ujian"],
@@ -106,6 +124,12 @@ export default {
   mounted() {
     this.santri.status = this.$store.state.admin.santriBaru.santribaru.status;
     this.santri.nama = this.$store.state.admin.santriBaru.santribaru.name;
+    this.santri.foto_santri = this.$store.state.admin.santriBaru.santribaru.foto_santri;
+    this.santri.foto_ijazah = this.$store.state.admin.santriBaru.santribaru.foto_ijazah;
+    this.santri.foto_nisn = this.$store.state.admin.santriBaru.santribaru.foto_nisn;
+    this.santri.akte_santri = this.$store.state.admin.santriBaru.santribaru.akte_santri;
+    this.santri.bukti_pembayaran = this.$store.state.admin.santriBaru.santribaru.bukti_pembayaran;
+    this.santri.surat_rekomendasi = this.$store.state.admin.santriBaru.santribaru.surat_rekomendasi;
  
   },
 
