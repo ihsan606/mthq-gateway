@@ -531,7 +531,7 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <div class="form-group">
               <label>Ijazah</label>
               <b-form-file
@@ -544,7 +544,7 @@
                 }}</b-alert>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="col-md-12">
             <div class="form-group">
