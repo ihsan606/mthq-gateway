@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <h1 class="rounded">FORMULIR PENDAFTARAN SANTRI BARU</h1>
           <p class="mb-5">Ma'had Tahfidz Hidayatul Quran</p>
-          
+          <p>{{listTingkat}}</p>
         </div>
       </div>
       <div class="card border-0 rounded shadow-sm border-top-blue" style="background-color: white"> 
@@ -724,18 +724,18 @@ export default {
   },
 
   //hook "asyncData"
-  // async asyncData({ store }) {
-  //   //get list all categories
-  //   await store.dispatch("santribaru/jenisTingkat/getListTingkat");
-  // },
+  async asyncData({ store }) {
+    //get list all categories
+    await store.dispatch("santribaru/jenisTingkat/getListTingkat");
+  },
 
   // //computed
-  // computed: {
-  //   //categories
-  //   listTingkat() {
-  //     return this.$store.state.santribaru.jenisTingkat.listTingkat;
-  //   },
-  // },
+  computed: {
+    //categories
+    listTingkat() {
+      return this.$store.state.santribaru.jenisTingkat.listTingkat;
+    },
+  },
 
   methods: {
     //handle file upload

@@ -1,6 +1,6 @@
 export const state = ()=>({
 
-    listTingkat:{},
+    listTingkat:[],
 
 })
 
@@ -30,7 +30,8 @@ export const actions= {
 
              //error
              .catch(error => {
-                reject(error)
+                 console.log(error.message)
+                // reject(error)
             })
            
         })
