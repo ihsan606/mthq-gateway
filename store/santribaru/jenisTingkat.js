@@ -27,6 +27,11 @@ export const actions= {
 
                 resolve()
             } )
+
+             //error
+             .catch(error => {
+                reject(error)
+            })
            
         })
     }
