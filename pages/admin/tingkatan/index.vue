@@ -9,7 +9,7 @@
                 <span class="font-weight-bold"
                   ><i class="fas fa-door-open"></i>JENIS TINGKATAN</span
                 >
-                <p>{{jenisTingkatans}}</p>
+                
               </div>
               <div class="card-body">
                 <nuxt-link

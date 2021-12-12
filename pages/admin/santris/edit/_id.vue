@@ -1137,7 +1137,7 @@ export default {
   //hook "asyncData"
   async asyncData({ store, route }) {
     await store.dispatch("admin/santri/getDetailSantri", route.params.id);
-    await store.dispatch("santribaru/jenisTingkat/getListTingkat");
+    await store.dispatch("santribaru/jenisTingkatan/getListTingkat");
     await store.dispatch("admin/waliSantri/getListWali");
     await store.dispatch("admin/angkatan/getListAngkatan");
     await store.dispatch("admin/kelas/getListKelas");
@@ -1149,7 +1149,7 @@ export default {
       return this.$store.state.admin.waliSantri.listWali
     },
      listTingkat() {
-      return this.$store.state.santribaru.jenisTingkat.listTingkat;
+      return this.$store.state.santribaru.jenisTingkatan.listTingkat;
     },
     angkatans() {
       return this.$store.state.admin.angkatan.listAngkatan

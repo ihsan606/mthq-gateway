@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <h1 class="rounded">FORMULIR PENDAFTARAN SANTRI BARU</h1>
           <p class="mb-5">Ma'had Tahfidz Hidayatul Quran</p>
-          <p>{{jenisTingkatans}}</p>
+
         </div>
       </div>
       <div class="card border-0 rounded shadow-sm border-top-blue" style="background-color: white"> 
@@ -139,7 +139,7 @@
           </div>
 
           <div class="row">
-            <!-- <div class="col-md-6">
+            <div class="col-md-6">
               <div class="form-group">
                 <label>Tingkat</label>
                 <select
@@ -148,7 +148,7 @@
                 >
                   <option value="">-- pilih tingkat --</option>
                   <option
-                    v-for="tingkat in listTingkat"
+                    v-for="tingkat in jenisTingkatans"
                     :key="tingkat.id"
                     :value="tingkat.id"
                   >
@@ -161,7 +161,7 @@
                   }}</b-alert>
                 </div>
               </div>
-            </div> -->
+            </div>
 
             <div class="col-md-6">
               <div class="form-group">
@@ -530,8 +530,8 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-md-12">
+<!-- 
+          <div class="col-md-12">
             <div class="form-group">
               <label>Ijazah</label>
               <b-form-file
