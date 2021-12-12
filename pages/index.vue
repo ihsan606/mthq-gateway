@@ -139,7 +139,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="form-group">
                 <label>Tingkat</label>
                 <select
@@ -161,7 +161,7 @@
                   }}</b-alert>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="col-md-6">
               <div class="form-group">
@@ -724,18 +724,18 @@ export default {
   },
 
   //hook "asyncData"
-  async asyncData({ store }) {
-    //get list all categories
-    await store.dispatch("santribaru/jenisTingkat/getListTingkat");
-  },
+  // async asyncData({ store }) {
+  //   //get list all categories
+  //   await store.dispatch("santribaru/jenisTingkat/getListTingkat");
+  // },
 
-  //computed
-  computed: {
-    //categories
-    listTingkat() {
-      return this.$store.state.santribaru.jenisTingkat.listTingkat;
-    },
-  },
+  // //computed
+  // computed: {
+  //   //categories
+  //   listTingkat() {
+  //     return this.$store.state.santribaru.jenisTingkat.listTingkat;
+  //   },
+  // },
 
   methods: {
     //handle file upload
