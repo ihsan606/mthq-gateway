@@ -725,14 +725,14 @@ export default {
 
   //hook "asyncData"
   async asyncData({ store }) {
-    await store.dispatch("admin/jenisTingkatan/getJenisTingkatansData");
+    await store.dispatch("santriBaru/jenisTingkat/getListTingkat");
   },
 
   //computed
   computed: {
     //kelas
     jenisTingkatans() {
-      return this.$store.state.admin.jenisTingkatan.jenisTingkatans;
+      return this.$store.state.santriBaru.jenisTingkat.listTingkat;
     },
   },
 
