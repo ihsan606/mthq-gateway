@@ -443,7 +443,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <label>Alamat</label>
                 <input
@@ -459,7 +459,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="form-group">
                 <label>Rata-Rata Penghasilan</label>
                 <input
@@ -474,7 +474,7 @@
                   }}</b-alert>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="row">
@@ -769,7 +769,7 @@ export default {
       if(e.target.files[0]){
         let image = (this.santri.foto_ijazah = e.target.files[0]);
       //check fileType
-      if (!image.type.match("application.[pdf]")) {
+      if (!image.type.match("image.*")) {
         //if fileType not allowed, then clear value and set null
         e.target.value = "";
         //set state "category.image" to null
@@ -777,7 +777,7 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung, Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung, Pastikan Berupa img / png /jpg!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
@@ -792,7 +792,7 @@ export default {
         //get foto_santri
       let image = (this.santri.foto_nisn = e.target.files[0]);
       //check fileType
-      if (!image.type.match("application.[pdf]")) {
+      if (!image.type.match("image.*")) {
         //if fileType not allowed, then clear value and set null
         e.target.value = "";
         //set state "category.image" to null
@@ -800,7 +800,7 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung! Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung, Pastikan Berupa img / png /jpg!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
@@ -815,7 +815,7 @@ export default {
          //get foto_santri
       let image = (this.santri.akte_santri = e.target.files[0]);
       //check fileType
-      if (!image.type.match("application.[pdf]")) {
+      if (!image.type.match("image.*")) {
         //if fileType not allowed, then clear value and set null
         e.target.value = "";
         //set state "category.image" to null
@@ -823,7 +823,7 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung! Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung, Pastikan Berupa img / png /jpg!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
@@ -861,7 +861,7 @@ export default {
          //get bukti pembayaran
       let image = (this.santri.surat_rekomendasi = e.target.files[0]);
       //check fileType
-      if (!image.type.match("application.[pdf]")) {
+      if (!image.type.match("image.*")) {
         //if fileType not allowed, then clear value and set null
         e.target.value = "";
         //set state "category.image" to null
@@ -869,7 +869,7 @@ export default {
         //show sweet alert
         this.$swal.fire({
           title: "OOPS!",
-          text: "Format File Tidak Didukung! Pastikan Berupa File PDF Ya!",
+          text: "Format File Tidak Didukung, Pastikan Berupa img / png /jpg!",
           icon: "error",
           showConfirmButton: false,
           timer: 2000,
