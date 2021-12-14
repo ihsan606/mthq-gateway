@@ -54,6 +54,52 @@
                     </div>
                   </div>
 
+                   <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>ANGKATAN</label>
+                        <select
+                          class="form-control"
+                          v-model="santri.angkatan_id"
+                        >
+                          <option value="">-- Pilih Angkatan --</option>
+                          <option
+                            v-for="angkatan in angkatans"
+                            :key="angkatan.id"
+                            :value="angkatan.id"
+                          >
+                            {{ angkatan.name }}
+                          </option>
+                        </select>
+                        <div v-if="validation.angkatan_id" class="mt-2">
+                          <b-alert show variant="danger">{{
+                            validation.angkatan_id[0]
+                          }}</b-alert>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>KELAS</label>
+                        <select class="form-control" v-model="santri.kelas_id">
+                          <option value="">-- Pilih KELAS --</option>
+                          <option
+                            v-for="kelas in kelases"
+                            :key="kelas.id"
+                            :value="kelas.id"
+                          >
+                            {{ kelas.name }}
+                          </option>
+                        </select>
+                        <div v-if="validation.kelas_id" class="mt-2">
+                          <b-alert show variant="danger">{{
+                            validation.kelas_id[0]
+                          }}</b-alert>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -551,51 +597,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>ANGKATAN</label>
-                        <select
-                          class="form-control"
-                          v-model="santri.angkatan_id"
-                        >
-                          <option value="">-- Pilih Angkatan --</option>
-                          <option
-                            v-for="angkatan in angkatans"
-                            :key="angkatan.id"
-                            :value="angkatan.id"
-                          >
-                            {{ angkatan.name }}
-                          </option>
-                        </select>
-                        <div v-if="validation.angkatan_id" class="mt-2">
-                          <b-alert show variant="danger">{{
-                            validation.angkatan_id[0]
-                          }}</b-alert>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>KELAS</label>
-                        <select class="form-control" v-model="santri.kelas_id">
-                          <option value="">-- Pilih KELAS --</option>
-                          <option
-                            v-for="kelas in kelases"
-                            :key="kelas.id"
-                            :value="kelas.id"
-                          >
-                            {{ kelas.name }}
-                          </option>
-                        </select>
-                        <div v-if="validation.kelas_id" class="mt-2">
-                          <b-alert show variant="danger">{{
-                            validation.kelas_id[0]
-                          }}</b-alert>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 
 
                   <div class="row">
                     <div class="col-md-6">

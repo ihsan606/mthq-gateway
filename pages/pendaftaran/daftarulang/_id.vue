@@ -1077,7 +1077,7 @@ export default {
   async asyncData({ store, route}) {
     //get list all categories
     await store.dispatch("santribaru/santriBaru/getDetailSantriBaru", route.params.id);
-    await store.dispatch("santribaru/jenisTingkat/getListTingkat");
+    await store.dispatch("santribaru/jenisTingkatan/getListTingkat");
   },
 
   //computed

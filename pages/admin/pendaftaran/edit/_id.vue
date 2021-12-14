@@ -63,7 +63,7 @@
                   </button>
                 </form>
                 <p>Foto Santri</p>
-                 <iframe v-if="santri.foto_santri" :src="santri.foto_santri" class="my-3" width="100%" height="500px">
+                 <iframe download v-if="santri.foto_santri" :src="santri.foto_santri" class="my-3" width="100%" height="500px">
                 </iframe>
                <p>Foto NISN</p>
                  <iframe v-if="santri.foto_nisn" :src="santri.foto_nisn" class="my-3" width="100%" height="500px">
