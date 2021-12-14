@@ -1084,7 +1084,7 @@ export default {
   computed: {
     //categories
     listTingkat() {
-      return this.$store.state.santribaru.jenisTingkat.listTingkat;
+      return this.$store.state.santribaru.jenisTingkatan.listTingkat;
     },
   },
 
