@@ -55,6 +55,43 @@
                     </div>
                   </div>
 
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Password</label>
+              <input 
+                type="password"
+                v-model="santri.password"
+                placeholder="Password"
+                class="form-control"
+              />
+              <div v-if="validation.password" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.password[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Konfirmasi Password</label>
+              <input 
+                type="password"
+                v-model="santri.password_confirmation"
+                placeholder="Konfirmasi Password"
+                class="form-control"
+              />
+              <div v-if="validation.password_confirmation" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.password_confirmation[0]
+                }}</b-alert>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
                   <button class="btn btn-info mr-1 btn-submit" type="submit">
                     <i class="fa fa-paper-plane"></i> SAVE
                   </button>
@@ -104,6 +141,8 @@ export default {
       santri: {
         nama: "",
         status: "",
+        password: "",
+        password_confirmation: '',
         foto_santri: "",
         foto_ijazah: "",
         foto_nisn: "",
@@ -143,6 +182,8 @@ export default {
       let formData = new FormData();
 
       formData.append("status", this.santri.status);
+      formData.append("password", this.santri.password);
+      formData.append("password_confirmation", this.santri.password_confirmation);
       formData.append("_method", "PATCH");
 
       //sending data to action "updateStatus" vuex
