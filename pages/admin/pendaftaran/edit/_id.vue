@@ -20,7 +20,6 @@
                       <div class="form-group">
                         <label>NAMA LENGKAP</label>
                         <input
-                          disabled
                           type="text"
                           v-model="santri.nama"
                     
@@ -180,7 +179,7 @@ export default {
     async updateStatus() {
       //define formData
       let formData = new FormData();
-
+      formData.append("name", this.santri.nama);
       formData.append("status", this.santri.status);
       formData.append("password", this.santri.password);
       formData.append("password_confirmation", this.santri.password_confirmation);
