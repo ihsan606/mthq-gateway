@@ -2,6 +2,68 @@
   <main class="c-main">
     <div class="container-fluid">
       <div class="fade-in">
+
+        <div class="row">
+
+          <div class="col-6 col-lg-3">
+            <div class="card border-0 rounded shadow-sm overflow-hidden">
+              <div class="card-body p-0 d-flex align-items-center">
+                <div class="bg-success py-4 px-5 mfe-3">
+                  <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+                </div>
+                <div>
+                  <div class="text-black font-weight-medium" style="font-size:1.3em;">{{ statistic.all_santri }}</div>
+                  <div class=" text-uppercase font-weight-bold">TOTAL PENDAFTAR</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card border-0 rounded shadow-sm overflow-hidden">
+              <div class="card-body p-0 d-flex align-items-center">
+                <div class="bg-info py-4 px-5 mfe-3">
+                  <i class="fas fa-graduation-cap fa-2x"></i>
+                </div>
+                <div>
+                  <div class="text-black font-weight-medium" style="font-size:1.3em;">{{ statistic.mts_santri }}</div>
+                  <div class=" text-uppercase font-weight-bold">SANTRI MTS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card border-0 rounded shadow-sm overflow-hidden">
+              <div class="card-body p-0 d-flex align-items-center">
+                <div class="bg-info py-4 px-5 mfe-3">
+                  <i class="fas fa-graduation-cap fa-2x"></i>
+                </div>
+                <div>
+                  <div class="text-black font-weight-medium" style="font-size:1.3em;">{{statistic.ma_santri  }}</div>
+                  <div class=" text-uppercase font-weight-bold">SANTRI MA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="card border-0 rounded shadow-sm overflow-hidden">
+              <div class="card-body p-0 d-flex align-items-center">
+                <div class="bg-success py-4 px-5 mfe-3">
+                  <i class="fas fa-check-circle fa-2x"></i>
+                </div>
+                <div>
+                  <div class="text-black font-weight-medium" style="font-size:1.3em;">{{ statistic.lulus_santri}}</div>
+                  <div class=" text-uppercase font-weight-bold">SANTRI LULUS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
         <div class="row">
           <div class="col-md-12">
             <div class="card border-0 rounded shadow-sm border-top-blue">
@@ -61,7 +123,7 @@
                     :fields="fields"
                     show-empty
                   >
-                   
+
                     <template v-slot:cell(actions)="row">
                       <b-button
                         :to="{
@@ -106,6 +168,27 @@ export default {
     };
   },
 
+  // async asyncData({ $axios }) {
+
+  //     //fetching dashboard
+  //     const dashboard = await $axios.$get('/api/admin/pendaftaran-dashboard')
+
+  //     //statistic
+  //     const statistic = {
+  //       'all_santri': dashboard.data.all_santri,
+  //       'mts_santri': dashboard.data.mts_santri,
+  //       'ma_santri': dashboard.data.ma_santri,
+  //       'lulus_santri': dashboard.data.lulus_santri,
+  //       'gagal_santri': dashboard.data.gagal_santri,
+  //     }
+
+
+
+  //     return {
+  //       statistic
+  //     }
+  //   },
+
   //data function
   data() {
     return {
@@ -147,8 +230,27 @@ export default {
   },
 
   //hook "asyncData"
-  async asyncData({ store }) {
+  async asyncData({ store,$axios }) {
     await store.dispatch("admin/santriBaru/getSantriBarusData");
+
+
+     //fetching dashboard
+      const dashboard = await $axios.$get('/api/admin/pendaftaran-dashboard')
+
+      //statistic
+      const statistic = {
+        'all_santri': dashboard.data.all_santri,
+        'mts_santri': dashboard.data.mts_santri,
+        'ma_santri': dashboard.data.ma_santri,
+        'lulus_santri': dashboard.data.lulus_santri,
+        'gagal_santri': dashboard.data.gagal_santri,
+      }
+
+
+
+      return {
+        statistic
+      }
   },
 
   //computed
