@@ -13,7 +13,7 @@
                 </div>
                 <div>
                   <div class="text-black font-weight-medium" style="font-size:1.3em;">{{ statistic.all_santri }}</div>
-                  <div class=" text-uppercase font-weight-bold">TOTAL PENDAFTAR</div>
+                  <div class=" text-uppercase font-weight-bold" style="font-size:0.8em;">TOTAL PENDAFTAR</div>
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
                 </div>
                 <div>
                   <div class="text-black font-weight-medium" style="font-size:1.3em;">{{ statistic.mts_santri }}</div>
-                  <div class=" text-uppercase font-weight-bold">SANTRI MTS</div>
+                  <div class=" text-uppercase font-weight-bold" style="font-size:0.8em;">SANTRI MTS</div>
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div>
                   <div class="text-black font-weight-medium" style="font-size:1.3em;">{{statistic.ma_santri  }}</div>
-                  <div class=" text-uppercase font-weight-bold">SANTRI MA</div>
+                  <div class=" text-uppercase font-weight-bold" style="font-size:0.8em;">SANTRI MA</div>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div>
                   <div class="text-black font-weight-medium" style="font-size:1.3em;">{{ statistic.lulus_santri}}</div>
-                  <div class=" text-uppercase font-weight-bold">SANTRI LULUS</div>
+                  <div class=" text-uppercase font-weight-bold" style="font-size:0.8em;">SANTRI LULUS</div>
                 </div>
               </div>
             </div>
