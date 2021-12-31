@@ -22,7 +22,7 @@
                         <input
                           type="text"
                           v-model="santri.nama"
-                    
+
                           class="form-control"
                         />
                         <div v-if="validation.nama" class="mt-2">
@@ -58,7 +58,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Password</label>
-              <input 
+              <input
                 type="password"
                 v-model="santri.password"
                 placeholder="Password"
@@ -75,7 +75,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Konfirmasi Password</label>
-              <input 
+              <input
                 type="password"
                 v-model="santri.password_confirmation"
                 placeholder="Konfirmasi Password"
@@ -171,7 +171,7 @@ export default {
     this.santri.akte_santri = this.$store.state.admin.santriBaru.santribaru.akte_santri;
     this.santri.bukti_pembayaran = this.$store.state.admin.santriBaru.santribaru.bukti_pembayaran;
     this.santri.surat_rekomendasi = this.$store.state.admin.santriBaru.santribaru.surat_rekomendasi;
- 
+
   },
 
   methods: {
@@ -215,6 +215,9 @@ export default {
           this.validation = error.response.data;
         });
     },
+
+
+
   },
 };
 </script>

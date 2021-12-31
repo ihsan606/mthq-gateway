@@ -88,13 +88,23 @@
                   <button
                     @click="destroySantri"
                     type="button"
-                    class="btn btn-success btn-sm mb-3 mx-1 p-2"
+                    class="btn btn-danger btn-sm mb-3 mx-1 p-2"
                     v-b-tooltip.hover
                     title="Hapus Data Santri Tidak Lulus"
                   >
-                    <i class="fa fa-file-import"></i>
+                    <!-- <i class="fa fa-file-import"></i> -->
                     DELETE
                   </button>
+                  <a
+                    href="https://endgate.mthq.ponpes.id/api/admin/pendaftaran/export"
+                    type="button"
+                    class="btn btn-success btn-sm mb-3 mx-3 p-2"
+                    v-b-tooltip.hover
+                    title="export Data Santri Baru"
+                  >
+                    <i class="fa fa-file-export"></i>
+                    EXPORT
+                  </a>
                 </div>
                 <div class="form-group">
                   <div class="input-group mb-3">
@@ -383,6 +393,8 @@ export default {
         });
       }
     },
+
+
   },
 };
 </script>
