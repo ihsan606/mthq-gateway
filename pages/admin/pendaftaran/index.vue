@@ -95,7 +95,7 @@
                     <!-- <i class="fa fa-file-import"></i> -->
                     DELETE
                   </button>
-                  <!-- <a
+                  <a
                     href="https://endgate.mthq.ponpes.id/api/admin/pendaftaran/export"
                     type="button"
                     class="btn btn-success btn-sm mb-3 mx-3 p-2"
@@ -104,7 +104,7 @@
                   >
                     <i class="fa fa-file-export"></i>
                     EXPORT
-                  </a> -->
+                  </a>
                 </div>
                 <div class="form-group">
                   <div class="input-group mb-3">
