@@ -103,7 +103,7 @@
                     title="export Data Santri Baru"
                   >
                     <i class="fa fa-file-export"></i>
-                    EXPORT
+                    EXPOR
                   </a>
                 </div>
                 <div class="form-group">
