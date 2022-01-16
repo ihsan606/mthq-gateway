@@ -3,12 +3,12 @@
     <div class="container-xl">
       <div class="header">
         <div class="col-md-12">
-          <h1 class="rounded">FORMULIR PENDAFTARAN SANTRI BARU</h1>
+          <h1 class="rounded">FORMULIR PENDAFTARAN SANTRI BARU 2022</h1>
           <p class="mb-5">Ma'had Tahfidz Hidayatul Quran</p>
 
         </div>
       </div>
-      <div class="card border-0 rounded shadow-sm border-top-blue" style="background-color: white"> 
+      <div class="card border-0 rounded shadow-sm border-top-blue" style="background-color: white">
         <div class="card-body">
       <div class="bform">
         <form @submit.prevent="storeSantri">
@@ -530,7 +530,7 @@
               </div>
             </div>
           </div>
-<!-- 
+<!--
           <div class="col-md-12">
             <div class="form-group">
               <label>Ijazah</label>
@@ -606,12 +606,12 @@
             </div>
           </div>
         </div>
-          
+
           <button class="btn btn-info mx-2 rounded btn-submit" type="submit">
             <i class="fa fa-paper-plane"></i> Kirim
           </button>
         </form>
-         
+
       </div>
 
         </div>
@@ -761,7 +761,7 @@ export default {
         });
       }
       }
-      
+
     },
 
     handleFileIjazahChange(e) {
@@ -784,7 +784,7 @@ export default {
         });
       }
       }
-      
+
     },
 
     handleFileNISNChange(e) {
@@ -807,7 +807,7 @@ export default {
         });
       }
       }
-      
+
     },
 
     handleFileAkteChange(e) {
@@ -830,7 +830,7 @@ export default {
         });
       }
       }
-     
+
     },
 
     handleFileBuktiAkteChange(e) {
@@ -853,7 +853,7 @@ export default {
         });
       }
       }
-     
+
     },
 
     handleFileRekomendasiChange(e) {
@@ -876,11 +876,11 @@ export default {
         });
       }
       }
-     
+
     },
     //method "storeSantri"
     async storeSantri() {
-      
+
       //define formData
       let formData = new FormData();
 
@@ -964,14 +964,14 @@ export default {
           confirmButtonColor: "#d33",
           cancelButtonColor: "#3085d6",
           confirmButtonText: "Sudah Disimpan!",
-        
+
         })
         .then((result) => {
           if (result.isConfirmed) {
             this.$swal.close();
           }
         });
-          
+
 
           // redirect route "admin-santris"
           this.$router.push({
@@ -987,7 +987,7 @@ export default {
         });
 
 
-        
+
     },
   },
 };
