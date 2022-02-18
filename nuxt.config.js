@@ -210,7 +210,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseUrl: 'https://endgate.mthq.ponpes.id/'
+    baseUrl: 'https://backend.mthq-gateway.my.id/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
